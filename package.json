@@ -1,14 +1,27 @@
 {
     "name": "truffle-keystore-provider",
     "version": "1.0.0",
-    "description": "",
+    "description": "Local keystore compatible Web3 provider to be used with Truffle",
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
+    "repository": {
+        "url": "git@github.com:yondonfu/truffle-keystore-provider.git"
+    },
+    "keywords": [
+        "ethereum",
+        "keystore",
+        "provider",
+        "web3",
+        "truffle"
+    ],
+    "author": "Yondon Fu <yondon.fu@gmail.com>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/yondonfu/truffle-keystore-provider/issues"
+    },
+    "homepage": "https://github.com/yondonfu/truffle-keystore-provider#readme",
     "dependencies": {
         "ethereumjs-wallet": "^0.6.0",
         "keythereum": "^1.0.2",

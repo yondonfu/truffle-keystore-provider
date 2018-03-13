@@ -14,6 +14,24 @@ $ npm install --save truffle-keystore-provider
 In your `truffle.js` file:
 
 ```
+const KeystoreProvider = require("truffle-keystore-provider")
+
+const memoizeKeystoreProviderCreator = () => {
+    let providers = {}
+
+    return (account, dataDir, providerUrl) => {
+        if (providerUrl in providers) {
+            return providers[providerUrl]
+        } else {
+            const provider = new KeystoreProvider(account, dataDir, providerUrl)
+            providers[providerUrl] = provider
+            return provider
+        }
+    }
+}
+
+const createKeystoreProvider = memoizeKeystoreProviderCreator()
+
 module.exports = {
     rinkeby: {
         provider: createKeystoreProvider(process.env.ACCOUNT, process.env.DATA_DIR, "https://rinkeby.infura.io"),
