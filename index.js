@@ -13,7 +13,7 @@ function TruffleKeystoreProvider(address, dataDir, providerUrl) {
     console.log(`Using data directory: ${dataDirPath}`)
     console.log(`Please unlock your account ${address}`)
     const password = prompt("Password: ", { echo: "" })
-    const keyObj = keythereum.importFromFile(address, dataDirPath)
+    const keyObj = keythereum.importFromFile(address.toLowerCase(), dataDirPath)
 
     this.wallet = ethereumjsWallet.fromPrivateKey(keythereum.recover(password, keyObj))
     this.address = address
