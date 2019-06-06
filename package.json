@@ -22,7 +22,7 @@
         "url": "https://github.com/yondonfu/truffle-keystore-provider/issues"
     },
     "homepage": "https://github.com/yondonfu/truffle-keystore-provider#readme",
-    "devDependencies": {
+    "dependencies": {
         "ethereumjs-wallet": "^0.6.2",
         "keythereum": "^1.0.2",
         "prompt-sync": "^4.1.5",
