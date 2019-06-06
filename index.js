@@ -2,7 +2,7 @@ const path = require("path")
 const ProviderEngine = require("web3-provider-engine")
 const FiltersSubprovider = require("web3-provider-engine/subproviders/filters.js")
 const WalletSubprovider = require("web3-provider-engine/subproviders/wallet.js")
-const Web3Subprovider = require("web3-provider-engine/subproviders/web3.js")
+const ProviderSubprovider = require("web3-provider-engine/subproviders/provider.js")
 const NonceSubprovider = require("web3-provider-engine/subproviders/nonce-tracker.js")
 const Web3 = require("web3")
 const ethereumjsWallet = require("ethereumjs-wallet")
@@ -23,7 +23,7 @@ function TruffleKeystoreProvider(address, dataDir, providerUrl) {
     this.engine.addProvider(new FiltersSubprovider())
     this.engine.addProvider(new NonceSubprovider())
     this.engine.addProvider(new WalletSubprovider(this.wallet, {}))
-    this.engine.addProvider(new Web3Subprovider(new Web3.providers.HttpProvider(providerUrl)))
+    this.engine.addProvider(new ProviderSubprovider(new Web3.providers.HttpProvider(providerUrl)))
     this.engine.start()
 }
 
