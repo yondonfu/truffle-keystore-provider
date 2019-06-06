@@ -1,6 +1,6 @@
 {
     "name": "truffle-keystore-provider",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "Local keystore compatible Web3 provider to be used with Truffle",
     "main": "index.js",
     "scripts": {
