@@ -14,7 +14,7 @@ function truffleKeystoreProvider(providerUrl, dataDir, password) {
     console.log(`Using keystore file: ${dataDir}`)
     let pass = password
     console.log(password)
-    if (typeof password !== 'undefined' && password) {
+    if (!password) {
         console.log(`Please unlock your account`)
         pass = prompt("Password: ", { echo: "" })
     }
