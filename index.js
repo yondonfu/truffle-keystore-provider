@@ -23,6 +23,7 @@ function TruffleKeystoreProvider(dataDir, providerUrl) {
     this.engine.addProvider(new FiltersSubprovider())
     this.engine.addProvider(new NonceSubprovider())
     this.engine.addProvider(new WalletSubprovider(this.wallet, {}))
+    Web3.providers.HttpProvider.prototype.sendAsync = Web3.providers.HttpProvider.prototype.send
     this.engine.addProvider(new ProviderSubprovider(new Web3.providers.HttpProvider(providerUrl)))
     this.engine.start()
 }
