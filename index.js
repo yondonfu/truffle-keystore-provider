@@ -14,7 +14,7 @@ function TruffleKeystoreProvider(dataDir, providerUrl) {
     console.log(`Using keystore file: ${dataDir}`)
     console.log(`Please unlock your account`)
     const password = prompt("Password: ", { echo: "" })
-    const keyObj = JSON.parse(fs.readFileSync(filepath))
+    const keyObj = JSON.parse(fs.readFileSync(dataDir))
 
     this.wallet = ethereumjsWallet.fromPrivateKey(keythereum.recover(password, keyObj))
     this.address = address
