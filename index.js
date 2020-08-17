@@ -1,4 +1,5 @@
 const path = require("path")
+const fs = require("fs")
 const ProviderEngine = require("web3-provider-engine")
 const FiltersSubprovider = require("web3-provider-engine/subproviders/filters.js")
 const WalletSubprovider = require("web3-provider-engine/subproviders/wallet.js")
