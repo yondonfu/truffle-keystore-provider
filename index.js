@@ -9,12 +9,11 @@ const ethereumjsWallet = require("ethereumjs-wallet")
 const keythereum = require("keythereum")
 const prompt = require("prompt-sync")()
 
-function TruffleKeystoreProvider(address, dataDir, providerUrl) {
-    const dataDirPath = path.resolve(__dirname, dataDir)
-    console.log(`Using data directory: ${dataDirPath}`)
-    console.log(`Please unlock your account ${address}`)
+function TruffleKeystoreProvider(dataDir, providerUrl) {
+    console.log(`Using keystore file: ${dataDir}`)
+    console.log(`Please unlock your account`)
     const password = prompt("Password: ", { echo: "" })
-    const keyObj = keythereum.importFromFile(address.toLowerCase(), dataDirPath)
+    const keyObj = JSON.parse(fs.readFileSync(filepath))
 
     this.wallet = ethereumjsWallet.fromPrivateKey(keythereum.recover(password, keyObj))
     this.address = address
