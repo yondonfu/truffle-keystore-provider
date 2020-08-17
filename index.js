@@ -17,7 +17,7 @@ function TruffleKeystoreProvider(dataDir, providerUrl) {
     const keyObj = JSON.parse(fs.readFileSync(dataDir))
 
     this.wallet = ethereumjsWallet.fromPrivateKey(keythereum.recover(password, keyObj))
-    this.address = address
+    this.address = keyObj.address
 
     this.engine = new ProviderEngine()
     this.engine.addProvider(new FiltersSubprovider())
